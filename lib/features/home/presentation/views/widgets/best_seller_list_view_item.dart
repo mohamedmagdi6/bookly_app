@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/resources/font_manager.dart';
 import 'package:bookly_app/core/resources/text_style_manager.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -38,32 +39,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 style:
                     getLightStyle(color: Colors.white, fontSize: FontSize.s14),
               ),
-              Row(
-                children: [
-                  Text(
-                    '19.99',
-                    style: getBoldStyle(
-                        color: Colors.white, fontSize: FontSize.s18),
-                  ),
-                  SizedBox(
-                    width: 80.w,
-                  ),
-                  const Icon(
-                    Icons.star_rounded,
-                    color: Colors.amber,
-                  ),
-                  Text(
-                    '4.8',
-                    style: getRegularStyle(
-                        color: Colors.white, fontSize: FontSize.s14),
-                  ),
-                  Text(
-                    '(2390)',
-                    style: getLightStyle(
-                        color: Colors.white, fontSize: FontSize.s12),
-                  )
-                ],
-              )
+              const BooksRating()
             ],
           )
         ],

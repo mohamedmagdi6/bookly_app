@@ -16,8 +16,8 @@ class CustomListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height ?? 170.h,
-      width: width ?? 140.w,
+      height: height ?? 190.h,
+      width: width ?? 130.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(raduis ?? 20),
         color: Colors.white,
