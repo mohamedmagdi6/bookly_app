@@ -1,15 +1,16 @@
 import 'dart:async';
 
-import 'package:bookly_app/features/home/presentation/views/home_page.dart';
+import 'package:bookly_app/core/routes/routes_path.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    timerNavigation();
+    timerNavigation(context);
+    // timerNavigation();
     return Scaffold(
       body: Center(
         child: Image.asset('assets/images/Logo.png'),
@@ -17,15 +18,11 @@ class SplashView extends StatelessWidget {
     );
   }
 
-  Timer timerNavigation() {
+  Timer timerNavigation(BuildContext context) {
     return Timer(
       const Duration(seconds: 3),
       () {
-        Get.to(() => const HomePage(),
-            duration: const Duration(
-              milliseconds: 250,
-            ),
-            transition: Transition.fade);
+        GoRouter.of(context).push(RoutesPath.homePage);
       },
     );
   }

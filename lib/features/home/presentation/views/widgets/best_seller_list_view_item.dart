@@ -17,7 +17,7 @@ class BestSellerListViewItem extends StatelessWidget {
       child: Row(
         children: [
           CustomListViewItem(
-            height: 100.h,
+            height: 112.h,
             width: 70.w,
             raduis: 10,
           ),
