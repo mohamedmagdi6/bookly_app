@@ -22,7 +22,7 @@ class SplashView extends StatelessWidget {
     return Timer(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).push(RoutesPath.homePage);
+        GoRouter.of(context).push(RoutesPath.detailsPage);
       },
     );
   }

@@ -1,6 +1,8 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item.dart';
+import 'package:bookly_app/core/routes/routes_path.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/poster_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomListView extends StatelessWidget {
   const CustomListView({
@@ -15,9 +17,13 @@ class CustomListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            child: CustomListViewItem(),
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(RoutesPath.detailsPage);
+                },
+                child: const PosterContainer()),
           );
         },
       ),

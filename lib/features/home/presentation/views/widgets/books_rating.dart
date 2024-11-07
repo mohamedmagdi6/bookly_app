@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/resources/font_manager.dart';
 import 'package:bookly_app/core/resources/text_style_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BooksRating extends StatelessWidget {
   const BooksRating({
@@ -11,14 +10,8 @@ class BooksRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          '19.99',
-          style: getBoldStyle(color: Colors.white, fontSize: FontSize.s18),
-        ),
-        SizedBox(
-          width: 80.w,
-        ),
         const Icon(
           Icons.star_rounded,
           color: Colors.amber,
