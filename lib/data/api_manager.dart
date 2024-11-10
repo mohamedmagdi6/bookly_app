@@ -1,4 +1,4 @@
-import 'package:bookly_app/data/repository/api_constant.dart';
+import 'package:bookly_app/data/api_constant.dart';
 import 'package:dio/dio.dart';
 
 class ApiManager {
