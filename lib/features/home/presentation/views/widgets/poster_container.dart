@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PosterContainer extends StatelessWidget {
   const PosterContainer({
+    this.imagePath,
     this.raduis,
     this.height,
     this.width,
@@ -12,6 +13,7 @@ class PosterContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final double? raduis;
+  final String? imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,11 @@ class PosterContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(raduis ?? 20),
         color: Colors.white,
-        image: const DecorationImage(
+        image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage(
-            AssetsManager.testImage,
+          image: NetworkImage(
+            imagePath ??
+                'http://books.google.com/books/content?id=W8cmAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
           ),
         ),
       ),

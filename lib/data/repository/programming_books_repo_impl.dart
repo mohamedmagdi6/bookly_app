@@ -3,7 +3,9 @@ import 'package:bookly_app/data/data_sources/remote_data_source/programming_book
 import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 import 'package:bookly_app/domain/repository/programming_books_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
+@Injectable(as: ProgrammingBooksRepo)
 class ProgrammingBooksRepoImpl extends ProgrammingBooksRepo {
   ProgrammingBooksRemoteDataSource programmingBooksRemoteDataSource;
   ProgrammingBooksRepoImpl({required this.programmingBooksRemoteDataSource});

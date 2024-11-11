@@ -49,6 +49,9 @@ class VolumeInfoDto extends VolumeInfoEntity {
     title = json['title'];
     authors = json['authors'].cast<String>();
     description = json['description'];
+    imageLinks = json['imageLinks'] != null
+        ? ImageLinksDto.fromJson(json['imageLinks'])
+        : null;
   }
 }
 

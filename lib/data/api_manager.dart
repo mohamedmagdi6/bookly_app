@@ -1,6 +1,8 @@
 import 'package:bookly_app/data/api_constant.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class ApiManager {
   late Dio dio;
   ApiManager() {
