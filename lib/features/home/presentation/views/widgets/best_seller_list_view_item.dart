@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/resources/font_manager.dart';
 import 'package:bookly_app/core/resources/text_style_manager.dart';
+import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/poster_container.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_text.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({
     super.key,
+    required this.item,
   });
+  final ItemsEntity item;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,7 @@ class BestSellerListViewItem extends StatelessWidget {
       child: Row(
         children: [
           PosterContainer(
+            imagePath: item.volumeInfo!.imageLinks!.smallThumbnail,
             height: 112.h,
             width: 70.w,
             raduis: 10,
@@ -30,12 +34,12 @@ class BestSellerListViewItem extends StatelessWidget {
             children: [
               SizedBox(
                 width: 180.w,
-                child: const CustomText(
-                  text: 'Harry Potter and the Goblet of Fire',
+                child: CustomText(
+                  text: item.volumeInfo!.title,
                 ),
               ),
               Text(
-                'sub Title',
+                item.volumeInfo!.subtitle ?? '',
                 style:
                     getLightStyle(color: Colors.white, fontSize: FontSize.s14),
               ),
