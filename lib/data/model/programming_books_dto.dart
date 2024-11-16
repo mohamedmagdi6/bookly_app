@@ -48,6 +48,8 @@ class VolumeInfoDto extends VolumeInfoEntity {
   VolumeInfoDto.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     authors = json['authors'].cast<String>();
+    ratingsCount = json['ratingsCount'];
+    averageRating = json['averageRating'];
     description = json['description'];
     imageLinks = json['imageLinks'] != null
         ? ImageLinksDto.fromJson(json['imageLinks'])

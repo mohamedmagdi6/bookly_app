@@ -52,7 +52,10 @@ class BestSellerListViewItem extends StatelessWidget {
                 SizedBox(
                   width: 80.w,
                 ),
-                const BooksRating()
+                const BooksRating(
+                  rating: 4,
+                  ratingsCount: 6,
+                )
               ])
             ],
           )

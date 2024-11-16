@@ -22,13 +22,9 @@ class CustomListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: GestureDetector(
-                onTap: () {
-                  GoRouter.of(context).push(RoutesPath.detailsPage);
-                },
-                child: PosterContainer(
-                  imagePath: items[index].volumeInfo!.imageLinks!.thumbnail,
-                )),
+            child: PosterContainer(
+              imagePath: items[index].volumeInfo!.imageLinks!.thumbnail,
+            ),
           );
         },
       ),

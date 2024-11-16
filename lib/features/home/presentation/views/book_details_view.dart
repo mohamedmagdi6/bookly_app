@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/resources/font_manager.dart';
 import 'package:bookly_app/core/resources/text_style_manager.dart';
+import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/details_button_section.dart';
@@ -9,7 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
+  const BookDetailsView({super.key, required this.item});
+  final ItemsEntity item;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +25,16 @@ class BookDetailsView extends StatelessWidget {
               PosterContainer(
                 height: 234.h,
                 width: 162.w,
+                imagePath: item.volumeInfo!.imageLinks!.thumbnail!,
               ),
               const SizedBox(
                 height: 40,
               ),
               Text(
-                'HARRY POTTER',
+                item.volumeInfo!.title!,
                 style:
                     getBoldStyle(color: Colors.white, fontSize: FontSize.s24),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(
                 height: 6,
@@ -38,7 +42,7 @@ class BookDetailsView extends StatelessWidget {
               Opacity(
                 opacity: 0.7,
                 child: Text(
-                  'J.K. ROWLING',
+                  item.volumeInfo!.authors![0],
                   style: getMediumStyle(
                     color: Colors.white,
                     fontSize: FontSize.s18,
@@ -48,7 +52,10 @@ class BookDetailsView extends StatelessWidget {
               const SizedBox(
                 height: 18,
               ),
-              const BooksRating(),
+              BooksRating(
+                rating: item.volumeInfo!.averageRating ?? 4.5,
+                ratingsCount: item.volumeInfo!.ratingsCount ?? 4,
+              ),
               const SizedBox(
                 height: 30,
               ),

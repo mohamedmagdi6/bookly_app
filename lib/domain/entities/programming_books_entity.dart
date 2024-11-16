@@ -26,8 +26,8 @@ class VolumeInfoEntity {
   String? description;
   int? pageCount;
   List<String>? categories;
-  int? averageRating;
-  int? ratingsCount;
+  dynamic averageRating;
+  dynamic ratingsCount;
   ImageLinksEntity? imageLinks;
   String? subtitle;
 

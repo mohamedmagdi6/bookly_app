@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 class BooksRating extends StatelessWidget {
   const BooksRating({
     super.key,
+    required this.rating,
+    required this.ratingsCount,
   });
-
+  final dynamic rating;
+  final dynamic ratingsCount;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,14 +23,14 @@ class BooksRating extends StatelessWidget {
           width: 6.3,
         ),
         Text(
-          '4.8',
+          rating.toString(),
           style: getRegularStyle(color: Colors.white, fontSize: FontSize.s14),
         ),
         const SizedBox(
           width: 6.3,
         ),
         Text(
-          '(2390)',
+          '($ratingsCount)',
           style: getLightStyle(color: Colors.white, fontSize: FontSize.s12),
         )
       ],

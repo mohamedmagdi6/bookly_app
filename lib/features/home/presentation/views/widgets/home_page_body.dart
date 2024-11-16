@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/routes/routes_path.dart';
 import 'package:bookly_app/di/di.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view_model/home_states.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view_model/home_view_model.dart';
@@ -8,6 +9,7 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_text.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePageBody extends StatelessWidget {
   const HomePageBody({
@@ -44,8 +46,14 @@ class HomePageBody extends StatelessWidget {
                   separatorBuilder: (context, index) => SizedBox(
                     height: 10.h,
                   ),
-                  itemBuilder: (context, index) => BestSellerListViewItem(
-                    item: HomeViewModel.get(context).item[index],
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(RoutesPath.detailsPage,
+                          extra: HomeViewModel.get(context).item[index]);
+                    },
+                    child: BestSellerListViewItem(
+                      item: HomeViewModel.get(context).item[index],
+                    ),
                   ),
                   itemCount: HomeViewModel.get(context).item.length,
                 ))
