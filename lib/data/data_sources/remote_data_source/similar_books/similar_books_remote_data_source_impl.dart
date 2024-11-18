@@ -7,7 +7,7 @@ import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+@Injectable(as: SimilarBooksRemouteDataSource)
 class SimilarBooksRemoteDataSourceImpl extends SimilarBooksRemouteDataSource {
   SimilarBooksRemoteDataSourceImpl({required this.apiManager});
   ApiManager apiManager;

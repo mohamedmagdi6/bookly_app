@@ -12,7 +12,9 @@ class ProgrammingBooksRepoImpl extends ProgrammingBooksRepo {
   @override
   Future<Either<BooksEntity, Failure>> getProgrmmingBooks() async {
     var respose = await programmingBooksRemoteDataSource.getProgrammingBooks();
-    return respose.fold((programmingBooksModel) => Left(programmingBooksModel),
-        (error) => Right(error));
+    return respose.fold(
+      (programmingBooksModel) => Left(programmingBooksModel),
+      (error) => Right(error),
+    );
   }
 }
