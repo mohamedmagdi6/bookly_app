@@ -13,9 +13,9 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 import '../data/api_manager.dart' as _i704;
-import '../data/data_sources/remote_data_source/programming_books_remote_data_source.dart'
+import '../data/data_sources/remote_data_source/programming_books/programming_books_remote_data_source.dart'
     as _i31;
-import '../data/data_sources/remote_data_source/programming_books_remote_data_source_impl.dart'
+import '../data/data_sources/remote_data_source/programming_books/programming_books_remote_data_source_impl.dart'
     as _i327;
 import '../data/repository/programming_books_repo_impl.dart' as _i838;
 import '../domain/repository/programming_books_repo.dart' as _i1059;

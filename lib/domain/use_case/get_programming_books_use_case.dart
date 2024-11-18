@@ -9,7 +9,7 @@ class GetProgrammingBooksUseCase {
   ProgrammingBooksRepo programmingBooksRepo;
   GetProgrammingBooksUseCase({required this.programmingBooksRepo});
 
-  Future<Either<ProgrammingBooksEntity, Failure>> invoke() {
+  Future<Either<BooksEntity, Failure>> invoke() {
     return programmingBooksRepo.getProgrmmingBooks();
   }
 }

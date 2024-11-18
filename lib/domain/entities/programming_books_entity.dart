@@ -1,9 +1,9 @@
-class ProgrammingBooksEntity {
+class BooksEntity {
   String? kind;
   int? totalItems;
   List<ItemsEntity>? items;
 
-  ProgrammingBooksEntity({this.kind, this.totalItems, this.items});
+  BooksEntity({this.kind, this.totalItems, this.items});
 }
 
 class ItemsEntity {

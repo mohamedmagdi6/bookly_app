@@ -1,9 +1,9 @@
 import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 
-class ProgrammingBooksDto extends ProgrammingBooksEntity {
-  ProgrammingBooksDto({super.kind, super.totalItems, super.items});
+class BooksDto extends BooksEntity {
+  BooksDto({super.kind, super.totalItems, super.items});
 
-  ProgrammingBooksDto.fromJson(Map<String, dynamic> json) {
+  BooksDto.fromJson(Map<String, dynamic> json) {
     kind = json['kind'];
     totalItems = json['totalItems'];
     if (json['items'] != null) {
