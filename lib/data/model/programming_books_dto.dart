@@ -1,9 +1,10 @@
 import 'package:bookly_app/domain/entities/programming_books_entity.dart';
 
 class BooksDto extends BooksEntity {
-  BooksDto({super.kind, super.totalItems, super.items});
+  BooksDto({super.kind, super.totalItems, super.items, super.error});
 
   BooksDto.fromJson(Map<String, dynamic> json) {
+    error = json['error'] == null ? null : ErrorDto.fromJson(json['error']);
     kind = json['kind'];
     totalItems = json['totalItems'];
     if (json['items'] != null) {
@@ -12,6 +13,14 @@ class BooksDto extends BooksEntity {
         items!.add(ItemsDto.fromJson(v));
       });
     }
+  }
+}
+
+class ErrorDto extends ErrorEntity {
+  ErrorDto({super.code, super.message});
+  ErrorDto.fromJson(Map<String, dynamic> json) {
+    code = json['code'];
+    message = json['message'];
   }
 }
 

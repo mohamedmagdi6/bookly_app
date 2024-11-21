@@ -18,7 +18,8 @@ class SimilarBooksRemoteDataSourceImpl extends SimilarBooksRemouteDataSource {
     if (response.statusCode! >= 200 && response.statusCode! <= 300) {
       return Left(similarBooksModel);
     } else {
-      return Right(ServiceFailure(errorMessage: 'ther is error in service'));
+      return Right(
+          ServiceFailure(errorMessage: similarBooksModel.error!.message!));
     }
   }
 }

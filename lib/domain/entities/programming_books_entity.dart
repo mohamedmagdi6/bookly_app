@@ -2,8 +2,15 @@ class BooksEntity {
   String? kind;
   int? totalItems;
   List<ItemsEntity>? items;
+  ErrorEntity? error;
 
-  BooksEntity({this.kind, this.totalItems, this.items});
+  BooksEntity({this.kind, this.totalItems, this.items, this.error});
+}
+
+class ErrorEntity {
+  int? code;
+  String? message;
+  ErrorEntity({this.code, this.message});
 }
 
 class ItemsEntity {
