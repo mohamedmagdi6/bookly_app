@@ -6,17 +6,21 @@ class BookDetailsViewAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 50),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(
-            FontAwesomeIcons.x,
-            size: 28,
-            color: Colors.white,
-          ),
-          Icon(
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                FontAwesomeIcons.x,
+                size: 28,
+                color: Colors.white,
+              )),
+          const Icon(
             FontAwesomeIcons.cartShopping,
             size: 28,
             color: Colors.white,
