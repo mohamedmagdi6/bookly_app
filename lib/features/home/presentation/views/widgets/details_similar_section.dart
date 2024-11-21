@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/errors/failure.dart';
 import 'package:bookly_app/core/resources/font_manager.dart';
 import 'package:bookly_app/core/resources/text_style_manager.dart';
 import 'package:bookly_app/di/di.dart';
@@ -40,16 +39,17 @@ class DetailsSemilarSection extends StatelessWidget {
                   height: 112.h,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
+                    itemCount:
+                        SimilarBooksViewModel.get(context).similarItems.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 10.0),
                         child: PosterContainer(
-                          // imagePath: SimilarBooksViewModel.get(context)
-                          //     .similarItems[index]
-                          //     .volumeInfo!
-                          //     .imageLinks!
-                          //     .thumbnail!,
+                          imagePath: SimilarBooksViewModel.get(context)
+                              .similarItems[index]
+                              .volumeInfo!
+                              .imageLinks!
+                              .thumbnail!,
                           height: 112.h,
                           width: 70.w,
                           raduis: 10,
